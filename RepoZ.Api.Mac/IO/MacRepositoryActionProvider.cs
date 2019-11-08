@@ -34,7 +34,8 @@ namespace RepoZ.Api.Mac
 
         public RepositoryAction GetSecondaryAction(Repository repository)
         {
-            return CreateProcessRunnerAction(_translationService.Translate("Open in Terminal"), "open", $"-b com.apple.terminal \"{repository.Path}\"");
+            return CreateProcessRunnerAction("Open in Terminal", "open", $"-b com.googlecode.iterm2 \"{repository.Path}\"");
+            //return CreateProcessRunnerAction("Open in Terminal", "open", $"-b com.apple.terminal \"{repository.Path}\"");
         }
 
         public IEnumerable<RepositoryAction> GetContextMenuActions(IEnumerable<Repository> repositories)
